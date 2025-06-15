@@ -3,7 +3,7 @@ import TarjetaPersona from "./tarjetaPersona";
 
 function ListaTarjetas({personas}) {
     return(
-        <div>
+        <div className="Container-tarjeta">
             {personas.map(p=>(
                 <TarjetaPersona key={p.id} persona={p}/>
             ))}

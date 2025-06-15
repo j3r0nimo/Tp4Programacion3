@@ -1,0 +1,26 @@
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #eeeeee;
+    padding: 20px;
+    text-align: center;
+}
+.Container-tarjeta{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.Tarjeta{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px;
+    padding: 5px;
+    width: 220px;
+    
+}
+.boton{
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+}

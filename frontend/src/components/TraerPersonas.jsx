@@ -23,7 +23,7 @@ function TraerPersonas(){
     }
     return (
         <div>
-            <button onClick={TraerDatos}>mostrar personas</button>
+            <button className="boton" onClick={TraerDatos}>mostrar personas</button>
             {mostrando && <ListaTarjetas personas={personas}/>}
         </div>
         
