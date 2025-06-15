@@ -1,14 +1,32 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import ListaTarjetas from "./ListaTarjetas";
 function TraerPersonas(){
     const [personas, setPersonas] = useState([]);
+    const [mostrando, setMostrando] = useState(false)
 
-    useEffect(() => {
-        fetch("http://localhost:3001/personas")
+    const TraerDatos=()=>{
+        if (mostrando){
+            setMostrando(false);
+            setPersonas([])
+        }
+        else{
+            fetch("http://localhost:3001/personas")
             .then(res => res.json())
-            .then(data => setPersonas(data))
+            .then(data => {
+            setPersonas(data);
+            setMostrando(true);
+            })
             .catch(err => console.error("error al traer personas: ",err));
-    }, []);
-    return <ListaTarjetas personas={personas}/>
+        }
+        
+        
+    }
+    return (
+        <div>
+            <button onClick={TraerDatos}>mostrar personas</button>
+            {mostrando && <ListaTarjetas personas={personas}/>}
+        </div>
+        
+    )
 }
 export default TraerPersonas;
